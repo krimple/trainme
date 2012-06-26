@@ -5,6 +5,7 @@ import com.chariot.lunchlearn.testingtalk.db.OfferingRepository;
 import com.chariot.lunchlearn.testingtalk.model.Offering;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
 import java.util.List;
 
 public class OfferingServiceImpl implements OfferingService {
@@ -45,5 +46,10 @@ public class OfferingServiceImpl implements OfferingService {
   @Override
   public Offering updateOffering(Offering offering) {
     return offeringRepository.save(offering);
+  }
+
+  @Override
+  public boolean courseExistsOnDate(Long courseId, Date proposedDate) {
+    return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
 }

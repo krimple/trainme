@@ -3,6 +3,7 @@ package com.chariot.lunchlearn.testingtalk.service;
 import com.chariot.lunchlearn.testingtalk.db.CourseRepository;
 import com.chariot.lunchlearn.testingtalk.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.IncorrectUpdateSemanticsDataAccessException;
 
 import java.util.List;
 
@@ -18,6 +19,11 @@ public class CourseServiceImpl implements CourseService {
 
   @Override
   public void deleteCourse(Course course) {
+
+    int offeringCount = courseRepository.getCountOfOfferingsForCourse(course.getId());
+    if (offeringCount > 0) {
+      throw new IncorrectUpdateSemanticsDataAccessException("cannot delete a course with offerings");
+    }
     courseRepository.delete(course);
   }
 
