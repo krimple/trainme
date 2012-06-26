@@ -15,17 +15,33 @@ import java.util.Date;
 @Service
 public class TrainingServiceImpl implements TrainingService {
 
-  @Autowired
   private CourseService courseService;
 
-  @Autowired
   private OfferingService offeringService;
 
-  @Autowired
   private CourseRepository courseRepository;
 
-  @Autowired
   private AuditService auditService;
+
+  @Autowired
+  public void setCourseService(CourseService courseService) {
+    this.courseService = courseService;
+  }
+
+  @Autowired
+  public void setOfferingService(OfferingService offeringService) {
+    this.offeringService = offeringService;
+  }
+
+  @Autowired
+  public void setCourseRepository(CourseRepository courseRepository) {
+    this.courseRepository = courseRepository;
+  }
+
+  @Autowired
+  public void setAuditService(AuditService auditService) {
+    this.auditService = auditService;
+  }
 
   @Transactional
   public Errors addNewCourse(Course course) {

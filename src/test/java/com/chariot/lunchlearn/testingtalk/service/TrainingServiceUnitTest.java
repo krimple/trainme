@@ -1,17 +1,16 @@
 package com.chariot.lunchlearn.testingtalk.service;
 
+import com.chariot.lunchlearn.testingtalk.model.Course;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import java.math.BigDecimal;
 
 public class TrainingServiceUnitTest {
 
-  private TrainingService trainingService;
+  private TrainingServiceImpl trainingService;
 
   @Before
   public void setUp() {
@@ -19,21 +18,23 @@ public class TrainingServiceUnitTest {
   }
 
   @Test
-  public void equationTestSomething() {
-    assertTrue(1 == 1);
-  }
+  public void testAddNewCourseHappyPath() {
+    Course course = new Course();
+    course.setDescription("It's a biggie.");
+    course.setName("Basket Weaving");
+    course.setListPrice(new BigDecimal("100.00"));
+    // must mock course service AND audit service
 
 
-  @Test
-  public void testSomething() {
-    // actual, comparison value
-    assertEquals(1, 1);
-  }
+    trainingService.setAuditService(
+        Mockito.mock(AuditService.class)
+    );
+    trainingService.setCourseService(
+        Mockito.mock(CourseService.class)
+    );
+    
+    trainingService.addNewCourse(course);
 
-  @Test
-  public void matchSomething() {
-    // actual, comparison matcher
-    assertThat(1, equalTo(1) );
   }
 
   @After
