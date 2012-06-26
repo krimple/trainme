@@ -7,8 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuditServiceImpl implements AuditService {
 
-  @Autowired
   private AuditRepository auditRepository;
+
+  @Autowired
+  public void setAuditRepository(AuditRepository auditRepository) {
+    this.auditRepository = auditRepository;
+  }
 
   @Override
   public void auditActivity(Class clazz, String action) {
