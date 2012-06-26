@@ -24,9 +24,14 @@ public class TrainingServiceImpl implements TrainingService {
   @Autowired
   private CourseRepository courseRepository;
 
+  @Autowired
+  private AuditService auditService;
 
   @Transactional
   public Errors addNewCourse(Course course) {
+    auditService.auditActivity(this.getClass(),
+        "Adding new course " + course);
+
     // perform validation
     Errors errors = new BeanPropertyBindingResult(course, "course");
     // course id cannot be specified
@@ -47,9 +52,14 @@ public class TrainingServiceImpl implements TrainingService {
       errors.rejectValue("listPrice", "price must not be negative.");
 
     if (errors.hasErrors()) {
+      auditService.auditActivity(this.getClass(),
+          "Add new course " + course + " failed with errors. " + errors.toString());
       return errors;
     } else {
      courseService.saveCourse(course);
+
+     auditService.auditActivity(this.getClass(),
+          "Course saved. New ID is " + course.getId());
       return errors;
     }
   }

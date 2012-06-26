@@ -28,13 +28,16 @@ public class AuditEntry {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "audit_id")
   private Long id;
 
+  @Column(name = "class_name", length=255, nullable = false)
   private String className;
 
   @Temporal(value = TemporalType.TIMESTAMP)
   private Date auditLogEntryDate;
 
+  @Column(name = "audit_action", length=2000, columnDefinition = "text")
   private String action;
 
   public Long getId() {

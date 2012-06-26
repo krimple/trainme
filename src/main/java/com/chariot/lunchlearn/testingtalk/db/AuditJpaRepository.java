@@ -4,7 +4,6 @@ import com.chariot.lunchlearn.testingtalk.model.AuditEntry;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Date;
 
 public class AuditJpaRepository implements AuditRepository {
 
@@ -13,7 +12,7 @@ public class AuditJpaRepository implements AuditRepository {
 
   @Override
   public void addAuditEntry(String clazz, String action) {
-    AuditEntry entry = new AuditEntry(clazz,  action);
+    AuditEntry entry = new AuditEntry(clazz, action);
     em.persist(entry);
   }
 }
