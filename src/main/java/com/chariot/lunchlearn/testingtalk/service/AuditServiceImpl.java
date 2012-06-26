@@ -12,6 +12,7 @@ public class AuditServiceImpl implements AuditService {
 
   @Override
   public void auditActivity(Class clazz, String action) {
-    auditRepository.addAuditEntry(clazz.getCanonicalName(), action);
+    auditRepository.addAuditEntry(
+        clazz.getCanonicalName(), action);
   }
 }
