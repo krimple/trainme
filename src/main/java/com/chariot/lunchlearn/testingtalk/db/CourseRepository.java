@@ -1,8 +1,11 @@
 package com.chariot.lunchlearn.testingtalk.db;
 
 import com.chariot.lunchlearn.testingtalk.model.Course;
-import org.springframework.roo.addon.layers.repository.jpa.RooJpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
 
-@RooJpaRepository(domainType = Course.class)
-public interface CourseRepository {
+@Repository
+public interface CourseRepository extends JpaRepository<Course, Long>,
+    JpaSpecificationExecutor<Course> {
 }
