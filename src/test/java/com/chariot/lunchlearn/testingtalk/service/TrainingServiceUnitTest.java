@@ -20,20 +20,20 @@ public class TrainingServiceUnitTest {
 
   @Test
   public void equationTestSomething() {
-    assertTrue(0 == 1);
+    assertTrue(1 == 1);
   }
 
 
   @Test
   public void testSomething() {
     // actual, comparison value
-    assertEquals(0, 1);
+    assertEquals(1, 1);
   }
 
   @Test
   public void matchSomething() {
     // actual, comparison matcher
-    assertThat(0, equalTo(1) );
+    assertThat(1, equalTo(1) );
   }
 
   @After
