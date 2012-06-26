@@ -60,7 +60,8 @@ public class TrainingServiceImpl implements TrainingService {
     // first, check to see whether the date is in use
     // should probably be externalized but simple examples are cheesy by nature
 
-    Errors errors = new BeanPropertyBindingResult("offering", )
+    Errors errors = new BeanPropertyBindingResult(offering, "offering");
+
     if (courseRepository.hasOfferingOnDate(courseId, offering.getOfferingDate())) {
       errors.rejectValue("offeringDate", "Course already being taught on this date.");
     }

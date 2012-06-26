@@ -21,5 +21,4 @@ public class Course {
   @Column(name="course_description", length = 600, nullable = true)
   private String description;
 
-
 }
