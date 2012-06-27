@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertThat;
 @ContextConfiguration(locations = "classpath:META-INF/spring/applicationContext*.xml")
 public class AuditServiceIntegrationTest {
 
-  @Autowired
+  @PersistenceContext
   private EntityManager em;
 
   @Autowired
