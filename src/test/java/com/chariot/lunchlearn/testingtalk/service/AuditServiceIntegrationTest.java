@@ -36,12 +36,12 @@ public class AuditServiceIntegrationTest {
   @Transactional
   public void addNewAuditRecord() {
     int startRecordCount =
-        jdbcTemplate.queryForInt("select count(*) from AuditEntry");
+        jdbcTemplate.queryForInt("select count(*) from Audit_Entry");
     auditService.auditActivity(this.getClass(), "something!");
 
     em.flush();
     int endRecordCount =
-        jdbcTemplate.queryForInt("select count(*) from AuditEntry");
+        jdbcTemplate.queryForInt("select count(*) from Audit_Entry");
     assertThat(1, equalTo(endRecordCount - startRecordCount));
   }
 }
