@@ -27,13 +27,16 @@ public class TrainingServiceUnitTest {
   @Test
   public void testSomething() {
     // actual, comparison value
-    assertEquals(1, 1);
+    int actual = 1;
+    assertEquals(1, actual);
   }
 
   @Test
   public void matchSomething() {
     // actual, comparison matcher
-    assertThat(1, equalTo(1) );
+    // notice, we construct a sentence this way...
+    int actual = 1;
+    assertThat(actual, equalTo(1) );
   }
 
   @After

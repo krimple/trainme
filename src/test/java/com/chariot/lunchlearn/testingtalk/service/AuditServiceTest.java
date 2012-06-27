@@ -27,6 +27,6 @@ public class AuditServiceTest {
         this.getClass(),
         "do something");
 
-    assertThat(1, equalTo(stub.getDatabase().size()));
+    assertThat(stub.getDatabase().size(), equalTo(1));
   }
 }
