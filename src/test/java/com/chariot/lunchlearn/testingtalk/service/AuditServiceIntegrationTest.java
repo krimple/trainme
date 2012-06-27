@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -16,7 +17,10 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:META-INF/spring/applicationContext*.xml")
+@ContextConfiguration(locations = {
+    "classpath:META-INF/spring/applicationContext*.xml",
+    "classpath:com/chariot/lunchlearn/testingtalk/service/AuditServiceIntegrationTest-config.xml"})
+@TransactionConfiguration(defaultRollback = false)
 public class AuditServiceIntegrationTest {
 
   @PersistenceContext
@@ -34,15 +38,26 @@ public class AuditServiceIntegrationTest {
 
   @Test
   @Transactional
-  public void addNewAuditRecord() {
+  public void testAddNewAuditRecord() {
     int startRecordCount =
         jdbcTemplate.queryForInt("select count(*) from Audit_Entry");
+
     auditService.auditActivity(this.getClass(), "something!");
 
+    // force an insert to the db
     em.flush();
+
     int endRecordCount =
         jdbcTemplate.queryForInt("select count(*) from Audit_Entry");
     assertThat(1, equalTo(endRecordCount - startRecordCount));
+  }
+
+  @Test
+  public void testDataIntegrity() {
+    int recordCount =
+        jdbcTemplate.queryForInt("select count(*) from Audit_Entry");
+
+    assertThat(1, equalTo(recordCount));
   }
 }
 
