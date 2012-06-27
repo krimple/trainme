@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_chariot_lunchlearn_testingtalk_model_Offering" object="${offering}" path="/offerings" z="RhvwbCLo0xn2mpoHCqtxLxAy5SM=">
+        <field:display date="true" dateTimePattern="${offering_offeringdate_date_format}" field="offeringDate" id="s_com_chariot_lunchlearn_testingtalk_model_Offering_offeringDate" object="${offering}" z="a7OFwarPq81ARfjC0I0cmVxbSQc="/>
+        <field:display field="offeringPrice" id="s_com_chariot_lunchlearn_testingtalk_model_Offering_offeringPrice" object="${offering}" z="y5ML+WZhCC61DEV0ny8Foq3Rjm0="/>
+        <field:display field="maxCapacity" id="s_com_chariot_lunchlearn_testingtalk_model_Offering_maxCapacity" object="${offering}" z="WFipWWGcitvUgI3rBoYehifZNdk="/>
+        <field:display field="address" id="s_com_chariot_lunchlearn_testingtalk_model_Offering_address" object="${offering}" z="WD5ZpO17fBV6wzDNOSqp0lP0Bks="/>
+        <field:display field="course" id="s_com_chariot_lunchlearn_testingtalk_model_Offering_course" object="${offering}" z="l9kj3ilkGW2uABK9R2KxtDyrXGQ="/>
+    </page:show>
+</div>

@@ -4,7 +4,9 @@
 package com.chariot.lunchlearn.testingtalk.model;
 
 import com.chariot.lunchlearn.testingtalk.model.Course;
+import com.chariot.lunchlearn.testingtalk.model.Offering;
 import java.math.BigDecimal;
+import java.util.List;
 
 privileged aspect Course_Roo_JavaBean {
     
@@ -30,6 +32,14 @@ privileged aspect Course_Roo_JavaBean {
     
     public void Course.setDescription(String description) {
         this.description = description;
+    }
+    
+    public List<Offering> Course.getOfferings() {
+        return this.offerings;
+    }
+    
+    public void Course.setOfferings(List<Offering> offerings) {
+        this.offerings = offerings;
     }
     
 }

@@ -3,6 +3,8 @@
 
 package com.chariot.lunchlearn.testingtalk.model;
 
+import com.chariot.lunchlearn.testingtalk.model.Address;
+import com.chariot.lunchlearn.testingtalk.model.Course;
 import com.chariot.lunchlearn.testingtalk.model.Offering;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -31,6 +33,22 @@ privileged aspect Offering_Roo_JavaBean {
     
     public void Offering.setMaxCapacity(int maxCapacity) {
         this.maxCapacity = maxCapacity;
+    }
+    
+    public Address Offering.getAddress() {
+        return this.address;
+    }
+    
+    public void Offering.setAddress(Address address) {
+        this.address = address;
+    }
+    
+    public Course Offering.getCourse() {
+        return this.course;
+    }
+    
+    public void Offering.setCourse(Course course) {
+        this.course = course;
     }
     
 }

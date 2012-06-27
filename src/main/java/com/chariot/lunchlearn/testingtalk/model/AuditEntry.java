@@ -1,5 +1,6 @@
 package com.chariot.lunchlearn.testingtalk.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -35,6 +36,7 @@ public class AuditEntry {
   private String className;
 
   @Temporal(value = TemporalType.TIMESTAMP)
+  @DateTimeFormat(style = "M-")
   private Date auditLogEntryDate;
 
   @Column(name = "audit_action", length=2000, columnDefinition = "longvarchar")

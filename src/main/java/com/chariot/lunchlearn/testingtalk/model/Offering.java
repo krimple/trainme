@@ -1,5 +1,6 @@
 package com.chariot.lunchlearn.testingtalk.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.entity.RooJpaEntity;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -14,6 +15,7 @@ import java.util.Date;
 public class Offering {
 
   @Temporal(value = TemporalType.DATE)
+  @DateTimeFormat(style = "M-")
   @Column(name = "offer_date", nullable = false)
   private Date offeringDate;
 
@@ -26,7 +28,7 @@ public class Offering {
   private Address address;
 
   @ManyToOne
-  @JoinColumn(name = "offering_id")
+  @JoinColumn(name = "course_id")
   private Course course;
 
 }

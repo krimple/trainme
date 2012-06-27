@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 
-@Repository
 public interface CourseRepository extends JpaRepository<Course, Long>,
     JpaSpecificationExecutor<Course> {
 

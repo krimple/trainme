@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -20,7 +19,6 @@ import static org.junit.Assert.assertThat;
 @ContextConfiguration(locations = {
     "classpath:META-INF/spring/applicationContext*.xml",
     "classpath:com/chariot/lunchlearn/testingtalk/service/AuditServiceIntegrationTest-config.xml"})
-@TransactionConfiguration(defaultRollback = false)
 public class AuditServiceIntegrationTest {
 
   @PersistenceContext

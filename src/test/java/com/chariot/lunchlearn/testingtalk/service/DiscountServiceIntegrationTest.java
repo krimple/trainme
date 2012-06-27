@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 
-@ContextConfiguration(locations = {"classpath:META-INF/spring/applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath:META-INF/spring/applicationContext*.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class DiscountServiceIntegrationTest {
 
@@ -37,7 +37,7 @@ public class DiscountServiceIntegrationTest {
     assertThat(0d, equalTo(result.doubleValue()));
   }
 
-  @Test(expected = RuntimeException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testDiscountSadPathNegativeStudents() {
     service.calculateDiscount(course, -100);
   }

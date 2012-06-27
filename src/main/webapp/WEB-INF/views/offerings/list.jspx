@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_chariot_lunchlearn_testingtalk_model_Offering" items="${offerings}" z="tVtPcCZ52ILjc08zfrFUH+ZtnUE=">
+        <table:table data="${offerings}" id="l_com_chariot_lunchlearn_testingtalk_model_Offering" path="/offerings" z="n6/SMDXLznuakdJgYo0KrxlOlbs=">
+            <table:column date="true" dateTimePattern="${offering_offeringdate_date_format}" id="c_com_chariot_lunchlearn_testingtalk_model_Offering_offeringDate" property="offeringDate" z="n9k4vxKpVNYxg6rrjmlxMSLNgTk="/>
+            <table:column id="c_com_chariot_lunchlearn_testingtalk_model_Offering_offeringPrice" property="offeringPrice" z="nysbfLavpj/lWRZJTlyCVmiD634="/>
+            <table:column id="c_com_chariot_lunchlearn_testingtalk_model_Offering_maxCapacity" property="maxCapacity" z="Z46OkJY5VAP6Q5IKmrL99Ikjta8="/>
+            <table:column id="c_com_chariot_lunchlearn_testingtalk_model_Offering_address" property="address" z="jKd+heQj812f0XLiSZLMxJHCHrU="/>
+            <table:column id="c_com_chariot_lunchlearn_testingtalk_model_Offering_course" property="course" z="jpDex7ULF24VJ+f8C52HiTKj0cA="/>
+        </table:table>
+    </page:list>
+</div>
