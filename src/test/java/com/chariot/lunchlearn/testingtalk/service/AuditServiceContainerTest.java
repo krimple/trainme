@@ -19,7 +19,7 @@ import static org.junit.Assert.assertThat;
 @ContextConfiguration(locations = {
     "classpath:META-INF/spring/applicationContext*.xml",
     "classpath:com/chariot/lunchlearn/testingtalk/service/AuditServiceIntegrationTest-config.xml"})
-public class AuditServiceIntegrationTest {
+public class AuditServiceContainerTest {
 
   @PersistenceContext
   private EntityManager em;
@@ -58,4 +58,3 @@ public class AuditServiceIntegrationTest {
     assertThat(1, equalTo(recordCount));
   }
 }
-

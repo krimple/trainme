@@ -15,7 +15,7 @@ import static org.junit.Assert.assertThat;
 
 @ContextConfiguration(locations = {"classpath:META-INF/spring/applicationContext*.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
-public class DiscountServiceIntegrationTest {
+public class DiscountServiceContainerTest {
 
   @Autowired
   private DiscountService service;
