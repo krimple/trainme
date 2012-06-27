@@ -8,6 +8,8 @@ target
 .eclipse
 .settings
 log.roo
+trainme.properties
+trainme.script
 .idea
 .DS_Store
 */*/*.script
