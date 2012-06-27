@@ -8,6 +8,10 @@ import org.mockito.Mockito;
 
 import java.math.BigDecimal;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
 public class TrainingServiceUnitTest {
 
   private TrainingServiceImpl trainingService;
@@ -17,7 +21,6 @@ public class TrainingServiceUnitTest {
     trainingService = new TrainingServiceImpl();
   }
 
-  @Test
   public void testAddNewCourseHappyPath() {
     Course course = new Course();
     course.setDescription("It's a biggie.");
@@ -34,7 +37,21 @@ public class TrainingServiceUnitTest {
     );
     
     trainingService.addNewCourse(course);
+  }
 
+  @Test
+  public void testSomething() {
+    // actual, comparison value
+    int actual = 1;
+    assertEquals(1, actual);
+  }
+
+  @Test
+  public void matchSomething() {
+    // actual, comparison matcher
+    // notice, we construct a sentence this way...
+    int actual = 1;
+    assertThat(actual, equalTo(1) );
   }
 
   @After
