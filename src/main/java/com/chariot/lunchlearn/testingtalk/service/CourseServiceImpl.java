@@ -4,9 +4,11 @@ import com.chariot.lunchlearn.testingtalk.db.CourseRepository;
 import com.chariot.lunchlearn.testingtalk.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectUpdateSemanticsDataAccessException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService {
 
   @Autowired

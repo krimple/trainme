@@ -1,10 +1,12 @@
 package com.chariot.lunchlearn.testingtalk.db;
 
 import com.chariot.lunchlearn.testingtalk.model.AuditEntry;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+@Repository
 public class AuditJpaRepository implements AuditRepository {
 
   @PersistenceContext

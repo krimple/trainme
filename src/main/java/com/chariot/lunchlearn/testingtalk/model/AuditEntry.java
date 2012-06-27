@@ -37,7 +37,7 @@ public class AuditEntry {
   @Temporal(value = TemporalType.TIMESTAMP)
   private Date auditLogEntryDate;
 
-  @Column(name = "audit_action", length=2000, columnDefinition = "text")
+  @Column(name = "audit_action", length=2000, columnDefinition = "clob")
   private String action;
 
   public Long getId() {

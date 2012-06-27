@@ -4,10 +4,7 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.entity.RooJpaEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -27,5 +24,9 @@ public class Offering {
 
   @Embedded
   private Address address;
+
+  @ManyToOne
+  @JoinColumn(name = "offering_id")
+  private Course course;
 
 }

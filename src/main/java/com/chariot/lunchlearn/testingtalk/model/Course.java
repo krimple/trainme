@@ -5,7 +5,9 @@ import org.springframework.roo.addon.jpa.entity.RooJpaEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
 import javax.persistence.Column;
+import javax.persistence.OneToMany;
 import java.math.BigDecimal;
+import java.util.List;
 
 @RooJavaBean
 @RooToString
@@ -20,5 +22,8 @@ public class Course {
 
   @Column(name="course_description", length = 600, nullable = true)
   private String description;
+
+  @OneToMany(mappedBy = "course")
+  private List<Offering> offerings;
 
 }

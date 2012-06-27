@@ -1,12 +1,10 @@
 package com.chariot.lunchlearn.testingtalk.service;
 
 import com.chariot.lunchlearn.testingtalk.model.Offering;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
-@Service
 public interface OfferingService {
   long countAllOfferings();
 

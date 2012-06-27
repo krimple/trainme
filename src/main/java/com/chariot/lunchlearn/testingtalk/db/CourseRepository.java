@@ -16,7 +16,7 @@ public interface CourseRepository extends JpaRepository<Course, Long>,
   public int getCountOfOfferingsForCourse(Long courseId);
 
 
-  @Query("select CASE WHEN count(o) >= 1 then true else false end " +
+  @Query("select CASE WHEN count(o) >= 1 THEN true ELSE false END " +
          " from Offering o " +
          " where o.course.id = ?1 and o.offeringDate = ?2")
   public boolean hasOfferingOnDate(Long courseId, Date offeringDate);
