@@ -8,7 +8,7 @@
   <name>trainme</name>
   <properties>
     <aspectj.version>1.7.0.RC1</aspectj.version>
-    <java.version>1.7</java.version>
+    <java.version>1.6</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <roo.version>1.2.2.RELEASE</roo.version>
     <slf4j.version>1.6.4</slf4j.version>
@@ -483,6 +483,11 @@
               <artifactId>cobertura-maven-plugin</artifactId>
               <version>2.5.1</version>
             </plugin>
+<dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-checkstyle-plugin</artifactId>
+    <version>2.9.1</version>
+</dependency>
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-javadoc-plugin</artifactId>
