@@ -10,6 +10,7 @@ target
 log.roo
 trainme.properties
 trainme.script
+ajcore*.*
 .idea
 .DS_Store
 */*/*.script
